@@ -10,14 +10,14 @@ import org.testng.annotations.Test;
 public class CreateNewAccountTests extends  TestBase {
     @Test
     public void createPositive () {
-        waitUntilElementIsLoaded(driver, By.xpath("//span[contains(text(),'Create Account')]"),30);
+        waitUntilElementIsLoaded(driver, By.xpath("//span[contains(text(),'Create Account')]"),45);
 
         WebElement createAccount = driver.findElement(By.xpath("//span[contains(text(),'Create Account')]"));
         createAccount.click();
 
         WebElement mailField = driver.findElement(By.xpath("//input[@formcontrolname='email']"));
         mailField.click();
-        mailField.sendKeys("mihOOO@gmail.com");
+        mailField.sendKeys("mihOO7712@gmail.com");
 
 
         WebElement passwordField = driver.findElement(By.xpath("//input[@formcontrolname='password']"));
@@ -49,14 +49,14 @@ public class CreateNewAccountTests extends  TestBase {
     }
     @Test
     public void createAccountAndLogIn(){
-        waitUntilElementIsLoaded(driver, By.xpath("//span[contains(text(),'Create Account')]"),30);
+        waitUntilElementIsLoaded(driver, By.xpath("//span[contains(text(),'Create Account')]"),45);
 
         WebElement createAccount = driver.findElement(By.xpath("//span[contains(text(),'Create Account')]"));
         createAccount.click();
 
         WebElement mailField = driver.findElement(By.xpath("//input[@formcontrolname='email']"));
         mailField.click();
-        mailField.sendKeys("mihpoiIIO@gmail.com");
+        mailField.sendKeys("mihpoiIIO772@gmail.com");
 
 
         WebElement passwordField = driver.findElement(By.xpath("//input[@formcontrolname='password']"));
@@ -91,7 +91,7 @@ public class CreateNewAccountTests extends  TestBase {
 
         WebElement emailReg = driver.findElement(By.xpath("//input[@formcontrolname='email']"));
         emailReg.click();
-        emailReg.sendKeys("mihpiIIO@gmail.com");
+        emailReg.sendKeys("mihpiIIO772@gmail.com");
 
         WebElement passReg =  driver.findElement(By.xpath("//input[@formcontrolname='password']"));
         passReg.click();
