@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import pages.EventsUnAuthPageHelper;
 import pages.HomePageHelper;
 
 import java.util.List;
@@ -19,32 +20,33 @@ import java.util.List;
  */
 public class HomePagesTests extends TestBase{
     HomePageHelper homePage;
-    EventsUnAuthPadeHelper eventsUnAuthPadeHelper;
+    EventsUnAuthPageHelper eventsUnAuthPage;
 
     @BeforeMethod
     public void initPage(){
-        homePage = PageFactory.initElements(driver, HomePageHelper.class);
+        homePage = PageFactory
+                .initElements(driver,HomePageHelper.class);
+        eventsUnAuthPage = PageFactory
+                .initElements(driver,EventsUnAuthPageHelper.class);
 
     }
-
     @Test
     public void openHomePage()  {
 
         homePage.waitUntilPageLoad();
-        String goToButtonName = homePage.getGoToEventButtonName();
+        String goToButtonName =
+                homePage.getGoToEventButtonName();
+
         Assert.assertEquals("Go to Event list",goToButtonName);
     }
+
     @Test
     public void goToEventsTest()  {
         homePage.waitUntilPageLoad();
         homePage.pressGoToEventButton();
-
-        waitUntilElementIsLoaded(driver,
-                By.xpath("//span[contains(text(),'Filters')]"),
-                20 );
-        WebElement titlePage = driver.findElement(By
-                .xpath("//h1[@class='gorisontal-center']"));
-        Assert.assertTrue(titlePage.getText().equals("Find event"));
+        eventsUnAuthPage.waitUntilPageLoad();
+        String header = eventsUnAuthPage.getHeader();
+        Assert.assertEquals("Find event",header);
     }
 
 }
