@@ -34,9 +34,7 @@ public class HomePagesTests extends TestBase{
     public void openHomePage()  {
 
         homePage.waitUntilPageLoad();
-        String goToButtonName =
-                homePage.getGoToEventButtonName();
-
+        String goToButtonName = homePage.getGoToEventButtonName();
         Assert.assertEquals("Go to Event list",goToButtonName);
     }
 
